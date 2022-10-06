@@ -11,7 +11,7 @@
 #include <iostream>
 using namespace std;
 /*Find max and min element using pointer and reference*/
-void findMaxMin(int *numberList, unsigned int size, int *maxValue,  int *minValue, unsigned int &maxIndex, unsigned int &minIndex){
+void findMaxMin(int *numberList, const unsigned int size, int *maxValue,  int *minValue, unsigned int &maxIndex, unsigned int &minIndex){
     *maxValue = *minValue = *numberList;
     for(unsigned int i = 1; i<size; i++){
         if(*maxValue < *(numberList+i)){
@@ -28,7 +28,8 @@ void findMaxMin(int *numberList, unsigned int size, int *maxValue,  int *minValu
 int main(int argc, char const *argv[]){
     /* code */
     system("cls");
-    unsigned int size = 5;
+    /*In static array size must be constant.*/
+    const unsigned int size = 5;
     int numberList[size];
     for(unsigned int i = 0; i < size; i++){
         cout<<"Index["<<i<<"]: Element = ";
